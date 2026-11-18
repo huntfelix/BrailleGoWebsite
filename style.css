@@ -111,7 +111,22 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   padding: clamp(.7rem, 1.6vw, .95rem) clamp(.85rem, 2vw, 1.2rem);
   margin-bottom: 1.5rem;
 }
-.cells { display: flex; gap: calc(var(--dot) * 1.15); --dot: min(11px, 1.9vw); }
+.cells {
+  display: flex; align-items: center; justify-content: center;
+  gap: calc(var(--dot) * 1.15); --dot: min(11px, 1.9vw);
+  height: calc(var(--dot) * 4);
+}
+.cells.as-text { gap: .02em; }
+.letter {
+  display: inline-block; font-weight: 800; color: var(--purple);
+  font-size: calc(var(--dot) * 3.6); line-height: 1; letter-spacing: -.02em;
+}
+.js .letter { animation: press-text .3s ease-out both; animation-delay: var(--d); }
+@keyframes press-text {
+  0%   { transform: scale(0); color: var(--red); }
+  70%  { transform: scale(1.15); color: var(--red); }
+  100% { transform: scale(1); }
+}
 .cell { display: grid; grid-template-columns: repeat(2, var(--dot)); grid-auto-rows: var(--dot); gap: calc(var(--dot) * .5); }
 .dot { border-radius: 50%; }
 .dot.on { background: var(--purple); }
@@ -122,7 +137,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   70%  { transform: scale(1.15); background: var(--red); }
   100% { transform: scale(1); }
 }
-@media (prefers-reduced-motion: reduce) { .js .dot.on { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .js .dot.on, .js .letter { animation: none; } }
 
 .hero h1 { font-size: clamp(3.4rem, 9vw, 6.6rem); font-weight: 800; letter-spacing: -.045em; line-height: .92; color: #fff; margin-bottom: 1rem; }
 .tagline {
@@ -188,26 +203,6 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 @media (max-width: 640px) {
   .figures { grid-template-columns: 1fr; gap: .75rem; }
   .fig-vs { justify-self: center; width: 2.75rem; height: 2.75rem; }
-}
-
-/* ---------- Uses strip ---------- */
-.uses { background: var(--black); overflow: hidden; padding: .85rem 0; }
-.marquee { display: flex; width: max-content; animation: scroll 18s linear infinite; }
-.marquee-track { list-style: none; margin: 0; padding: 0; display: flex; }
-.marquee-track li {
-  white-space: nowrap; color: #fff; font-weight: 700; font-size: 1.05rem;
-  display: flex; align-items: center;
-}
-.marquee-track li::after {
-  content: ""; width: .45rem; height: .45rem; border-radius: 50%;
-  background: var(--red); margin: 0 1.4rem;
-}
-@keyframes scroll { to { transform: translateX(-50%); } }
-.uses:hover .marquee { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) {
-  .marquee { animation: none; width: auto; }
-  .marquee-track { flex-wrap: wrap; justify-content: center; padding: 0 1rem; row-gap: .4rem; }
-  .marquee-track[aria-hidden] { display: none; }
 }
 
 /* ---------- Sections ---------- */
@@ -322,7 +317,6 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   padding: .25rem 0 1.25rem;
 }
 .reel-track { display: flex; gap: 1rem; width: max-content; animation: reel 38s linear infinite; }
-.reel:hover .reel-track, .reel:focus-within .reel-track { animation-play-state: paused; }
 @keyframes reel { to { transform: translateX(calc(-50% - .5rem)); } }
 .reel figure {
   margin: 0; flex: none; position: relative;
@@ -350,6 +344,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 @media (prefers-reduced-motion: reduce) {
   .reel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding-left: var(--gutter); }
   .reel-track { animation: none; }
+  .reel-track > [aria-hidden] { display: none; }
 }
 
 /* ---------- Price ---------- */
@@ -479,7 +474,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .footer { background: var(--black); color: #A9A9B0; font-size: .98rem; }
 .footer-dots { height: 4px; background: var(--red); }
 .footer-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem 3rem; padding-top: 2rem; padding-bottom: 2rem; }
-.footer-brand { display: flex; align-items: center; gap: .85rem; }
+.footer-brand { display: flex; flex-direction: column; }
 .footer-brand strong { display: block; color: #fff; font-size: 1.1rem; }
 .footer-brand span { font-size: .92rem; }
 .footer-braille { margin: 0; font-size: 1.4rem; letter-spacing: .12em; color: rgba(255,255,255,.25); justify-self: center; }

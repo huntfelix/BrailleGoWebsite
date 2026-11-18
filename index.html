@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -43,7 +43,7 @@
       <div class="wrap hero-grid">
         <div class="hero-text">
           <div class="paper" aria-hidden="true">
-            <div class="cells" id="emboss" data-braille="⠠⠃⠗⠁⠊⠇⠇⠑⠠⠛⠕⠖"></div>
+            <div class="cells" id="emboss" data-braille="⠠⠃⠗⠁⠊⠇⠇⠑⠠⠛⠕⠖" data-text="BrailleGo!"></div>
           </div>
           <h1>BrailleGo!</h1>
           <p class="tagline">Accessible culture at your fingertips</p>
@@ -85,17 +85,6 @@
       </div>
     </section>
 
-    <!-- Uses marquee -->
-    <section class="uses" aria-label="What BrailleGo! can print">
-      <div class="marquee">
-        <ul class="marquee-track">
-          <li>Restaurant menus</li><li>Board agendas</li><li>Classroom worksheets</li><li>Children’s books</li><li>Healthcare leaflets</li><li>Tourist guides</li><li>Poetry</li><li>Museum labels</li><li>Public information</li>
-        </ul>
-        <ul class="marquee-track" aria-hidden="true">
-          <li>Restaurant menus</li><li>Board agendas</li><li>Classroom worksheets</li><li>Children’s books</li><li>Healthcare leaflets</li><li>Tourist guides</li><li>Poetry</li><li>Museum labels</li><li>Public information</li>
-        </ul>
-      </div>
-    </section>
 
     <!-- Problem / solution -->
     <section class="section" id="about">
@@ -166,7 +155,7 @@
         </div>
         <div class="try-panel">
           <label class="try-label" for="try-input">Your text</label>
-          <input id="try-input" class="try-input" type="text" maxlength="40" value="Hello WRO" autocomplete="off" spellcheck="false">
+          <input id="try-input" class="try-input" type="text" maxlength="40" value="hello world" autocomplete="off" spellcheck="false">
           <div class="try-sheet">
             <div class="try-cells" id="try-cells" role="img" aria-label="Braille dot patterns for your text"></div>
           </div>
@@ -342,11 +331,8 @@
     <div class="footer-dots" aria-hidden="true"></div>
     <div class="wrap footer-inner">
       <div class="footer-brand">
-        <img src="assets/logos/hunt-chip.png" alt="" width="40" height="39">
-        <div>
-          <strong>BrailleGo!</strong>
-          <span>by Hunt Robotics, Leeds, England</span>
-        </div>
+        <strong>BrailleGo!</strong>
+        <span>by Hunt Robotics</span>
       </div>
       <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
       <nav aria-label="Footer">
@@ -359,6 +345,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
