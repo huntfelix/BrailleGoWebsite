@@ -26,7 +26,7 @@ function makeCell(ch, delayFor) {
   var column = 0;
   Array.from(el.dataset.braille || '').forEach(function (ch) {
     var start = column;
-    el.appendChild(makeCell(ch, function (n) { return 300 + (start + (n > 3 ? 1 : 0)) * 110; }));
+    el.appendChild(makeCell(ch, function (n) { return 150 + (start + (n > 3 ? 1 : 0)) * 55; }));
     column += 2;
   });
 })();
