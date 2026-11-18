@@ -19,54 +19,40 @@ function makeCell(ch, delayFor) {
   return cell;
 }
 
-// Hero strip: emboss the title in Braille, then flip to text, and back – on a loop.
+// Hero strip: emboss "BrailleGo!" in Braille, then turn each cell into its letter
+// in the same spot, and back again – on a loop.
+// data-text has one character per Braille cell; a space means the cell has no
+// letter of its own (the capital signs), so it just fades out.
 (function () {
   var el = document.getElementById('emboss');
   if (!el) return;
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var STEP = 55;            // ms between embossed columns / letters
-  var SHOW_BRAILLE = 3800;  // how long each state stays on screen (ms)
-  var SHOW_TEXT = 2600;
+  var cells = Array.from(el.dataset.braille || '');
+  var letters = Array.from(el.dataset.text || '');
+  var STEP = 55;
 
-  function showBraille() {
-    el.textContent = '';
-    el.classList.remove('as-text');
-    var column = 0;
-    Array.from(el.dataset.braille || '').forEach(function (ch) {
-      var start = column;
-      // left column (dots 1-3) first, then the right (4-6) – like the printer
-      el.appendChild(makeCell(ch, function (n) { return 100 + (start + (n > 3 ? 1 : 0)) * STEP; }));
-      column += 2;
-    });
-  }
-
-  function showText() {
-    el.textContent = '';
-    el.classList.add('as-text');
-    Array.from(el.dataset.text || '').forEach(function (ch, i) {
-      var s = document.createElement('span');
-      s.className = 'letter';
-      s.textContent = ch;
-      s.style.setProperty('--d', (100 + i * STEP * 2) + 'ms');
-      el.appendChild(s);
-    });
-  }
-
-  showBraille();
-  // Lock the strip's width to the Braille version so it doesn't jump when it flips.
-  el.style.width = el.offsetWidth + 'px';
-  window.addEventListener('resize', function () {
-    if (el.classList.contains('as-text')) return;
-    el.style.width = '';
-    el.style.width = el.offsetWidth + 'px';
+  cells.forEach(function (ch, i) {
+    var slot = document.createElement('span');
+    slot.className = 'slot';
+    slot.style.setProperty('--i', i);
+    var start = i * 2;
+    // left column (dots 1-3) first, then the right (4-6) – like the printer
+    slot.appendChild(makeCell(ch, function (n) { return 100 + (start + (n > 3 ? 1 : 0)) * STEP; }));
+    var letter = document.createElement('span');
+    letter.className = 'letter';
+    letter.textContent = (letters[i] || '').trim();
+    slot.appendChild(letter);
+    el.appendChild(slot);
   });
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
 
-  var braille = true;
+  var SHOW_BRAILLE = 3800, SHOW_TEXT = 2800;
+  var asText = false;
   function flip() {
-    braille = !braille;
-    if (braille) showBraille(); else showText();
-    setTimeout(flip, braille ? SHOW_BRAILLE : SHOW_TEXT);
+    asText = !asText;
+    el.classList.toggle('as-text', asText);
+    setTimeout(flip, asText ? SHOW_TEXT : SHOW_BRAILLE);
   }
   setTimeout(flip, SHOW_BRAILLE);
 })();

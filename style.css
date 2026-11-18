@@ -112,32 +112,53 @@ p { margin: 0 0 1rem; max-width: 64ch; }
   margin-bottom: 1.5rem;
 }
 .cells {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center;
   gap: calc(var(--dot) * 1.15); --dot: min(11px, 1.9vw);
   height: calc(var(--dot) * 4);
 }
-.cells.as-text { gap: .02em; }
-.letter {
-  display: inline-block; font-weight: 800; color: var(--purple);
-  font-size: calc(var(--dot) * 3.6); line-height: 1; letter-spacing: -.02em;
-}
-.js .letter { animation: press-text .3s ease-out both; animation-delay: var(--d); }
-@keyframes press-text {
-  0%   { transform: scale(0); color: var(--red); }
-  70%  { transform: scale(1.15); color: var(--red); }
-  100% { transform: scale(1); }
-}
+/* Each slot holds one Braille cell and the letter it stands for, stacked in the same spot */
+.slot { display: grid; place-items: center; --step: 55ms; }
+.slot > * { grid-area: 1 / 1; }
 .cell { display: grid; grid-template-columns: repeat(2, var(--dot)); grid-auto-rows: var(--dot); gap: calc(var(--dot) * .5); }
 .dot { border-radius: 50%; }
 .dot.on { background: var(--purple); }
 .dot.off { background: var(--grey-100); }
-.js .dot.on { animation: press .3s ease-out both; animation-delay: var(--d); }
+.letter {
+  font-weight: 800; color: var(--purple); line-height: 1;
+  font-size: calc(var(--dot) * 3.5);
+  opacity: 0; transform: scale(.3);
+  transition: opacity .15s ease, transform .15s ease;
+  transition-delay: calc(var(--i) * 35ms);
+}
+
+/* Braille state: dots emboss column by column */
+.js .cells:not(.as-text) .dot.on { animation: press .3s ease-out both; animation-delay: var(--d); }
 @keyframes press {
   0%   { transform: scale(0); background: var(--red); }
   70%  { transform: scale(1.15); background: var(--red); }
   100% { transform: scale(1); }
 }
-@media (prefers-reduced-motion: reduce) { .js .dot.on, .js .letter { animation: none; } }
+
+/* Text state: each cell shrinks away and its letter pops in, left to right */
+.cells.as-text .cell {
+  opacity: 0; transform: scale(.3);
+  transition: opacity .2s ease, transform .2s ease;
+  transition-delay: calc(var(--i) * var(--step));
+}
+.cells.as-text .letter {
+  opacity: 1; transform: none;
+  animation: press-text .32s ease-out both;
+  animation-delay: calc(var(--i) * var(--step) + 90ms);
+}
+@keyframes press-text {
+  0%   { transform: scale(0); color: var(--red); }
+  70%  { transform: scale(1.15); color: var(--red); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .cells .dot.on, .cells.as-text .letter { animation: none; }
+  .cell, .letter { transition: none !important; }
+}
 
 .hero h1 { font-size: clamp(3.4rem, 9vw, 6.6rem); font-weight: 800; letter-spacing: -.045em; line-height: .92; color: #fff; margin-bottom: 1rem; }
 .tagline {
