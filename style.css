@@ -176,8 +176,8 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .fig-label { display: block; font-size: 1rem; font-weight: 700; opacity: .85; }
 .fig strong { display: block; font-size: clamp(2.8rem, 6.5vw, 4.6rem); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin: .25rem 0 .4rem; }
 .fig-note { display: block; font-size: 1rem; opacity: .85; }
-.fig-violet { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2); color: #fff; }
-.fig-violet strong { color: rgba(255,255,255,.75); }
+.fig-rival { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2); color: #fff; }
+.fig-rival strong { color: rgba(255,255,255,.75); }
 .fig-red { background: var(--red-deep); color: #fff; box-shadow: 0 24px 50px -24px rgba(255,39,0,.8); }
 .fig-vs {
   align-self: center;
