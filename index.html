@@ -12,17 +12,18 @@
   <link rel="icon" href="assets/logos/hunt-chip.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav">
+  <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top">
-        <img src="assets/logos/hunt-chip.png" alt="" width="36" height="35">
-        <span>BrailleGo!</span>
+      <a class="brand" href="#top" aria-label="BrailleGo! home">
+        <img src="assets/logos/hunt-chip.png" alt="" width="34" height="33">
+        <span class="brand-name">BrailleGo!</span>
+        <span class="brand-by">by Hunt Robotics</span>
       </a>
       <nav aria-label="Main">
         <ul>
@@ -37,6 +38,7 @@
   </header>
 
   <main id="main">
+
     <!-- Hero -->
     <section class="hero" id="top">
       <div class="wrap hero-grid">
@@ -45,58 +47,78 @@
             <div class="cells" id="emboss" data-braille="⠠⠃⠗⠁⠊⠇⠇⠑⠠⠛⠕⠖"></div>
           </div>
           <h1>BrailleGo!</h1>
-          <p class="tagline">Accessible culture at your fingertips.</p>
-          <p class="lede">An affordable, portable Braille printer for short runs: menus, board agendas, worksheets and children’s books. Built from about £90 of parts, and open source so anyone can make one.</p>
+          <p class="tagline">Accessible culture at your fingertips</p>
+          <p class="lede">A portable Braille printer for short runs, from menus and board agendas to worksheets and children’s books. It’s built from about £90 of parts, and it’s open source, so anyone can make one.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#files">Get the files and build guide</a>
             <a class="btn btn-ghost" href="#how">See how it works</a>
           </div>
         </div>
-        <figure class="hero-photo">
-          <img src="assets/img/printer.jpg" width="1400" height="946" alt="The BrailleGo! printer: a white 3D-printed frame on aluminium rails, with a stepper motor, rollers and a green control board.">
-          <figcaption>
-            <img class="wro-mark" src="assets/logos/wro.png" alt="World Robot Olympiad" data-fallback="WRO">
-            <span>Hunt Robotics’ entry to WRO 2026, Robots Meet Culture, Future Innovators (Senior)</span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
 
-    <!-- Key figures -->
-    <section class="figures" aria-label="BrailleGo! in figures">
-      <div class="wrap figures-grid">
-        <div><strong>~£90</strong><span>in parts</span></div>
-        <div><strong>£250</strong><span>target price, against £1,500+ for the cheapest automated embossers</span></div>
-        <div><strong>4</strong><span>motors in total</span></div>
-        <div><strong>12V</strong><span>from a single wall plug</span></div>
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <img src="assets/img/printer.jpg" width="1400" height="946" alt="The BrailleGo! printer: a white 3D-printed frame on aluminium rails, with stepper motors, rollers and a green control board.">
+          </div>
+          <div class="badge">
+            <img class="badge-logo" src="assets/logos/wro.png" alt="World Robot Olympiad" data-fallback="WRO">
+            <div>
+              <strong>WRO 2026 Future Innovators</strong>
+              <span>Robots Meet Culture, Senior category</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <dl class="figures">
+          <div><dt>Parts cost</dt><dd>~£90</dd></div>
+          <div><dt>Target price</dt><dd>£250</dd></div>
+          <div><dt>Motors</dt><dd>4</dd></div>
+          <div><dt>Power</dt><dd>12V plug</dd></div>
+        </dl>
       </div>
     </section>
 
     <!-- Problem / solution -->
     <section class="section" id="about">
-      <div class="wrap two-col">
-        <div>
-          <h2>Braille is still too expensive to print</h2>
-          <p>The World Health Organization estimates at least 2.2 billion people live with a near or distance vision impairment. For many of them, Braille books, worksheets and everyday printed material are hard to find or too costly to make.</p>
-          <p>Even the cheapest automated Braille embossers cost £1,500 to £3,500, and school-grade machines run to several thousand more. That puts short, everyday prints out of reach for individuals, small schools and libraries, especially in poorer communities.</p>
+      <div class="wrap">
+        <div class="statement">
+          <p class="big-stat"><span>2.2 billion</span> people live with a near or distance vision impairment, according to the World Health Organization.</p>
         </div>
-        <div>
-          <h2>A Braille printer for everyone</h2>
-          <p>BrailleGo! rethinks the printer around cost and simplicity. You type text on a phone or laptop, and a motorised pin-punch mechanism embosses it as Braille onto A4 or A5 paper.</p>
-          <p>It uses widely available parts and a 3D-printed frame, so it is cheap to build and easy to repair. It’s slower than an industrial embosser, and that is the trade-off: it is made for short runs, not whole books.</p>
-          <p class="rnib-note">
-            <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
-            <span>Our grandfather was blind, and our mum has volunteered with the Royal National Institute of Blind People for many years. Braille users helped shape and test BrailleGo! at every stage.</span>
-          </p>
+        <div class="two-col">
+          <div>
+            <h2>Braille is still too expensive to print</h2>
+            <p>For many blind and partially sighted people, Braille books, worksheets and everyday printed material are hard to find or too costly to make.</p>
+            <p>Even the cheapest automated Braille embossers cost £1,500 to £3,500. That puts short, everyday prints out of reach for individuals, small schools and libraries, especially in poorer communities.</p>
+          </div>
+          <div>
+            <h2>So we built one that isn’t</h2>
+            <p>BrailleGo! rethinks the printer around cost and simplicity. You type on a phone or laptop, and a motorised pin-punch mechanism embosses your text as Braille onto A4 or A5 paper.</p>
+            <p>Common parts and a 3D-printed frame make it cheap to build and easy to repair. It’s slower than an industrial embosser, and that’s the trade-off: it’s made for short runs, not whole books.</p>
+          </div>
         </div>
+        <aside class="origin">
+          <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
+          <p>Our grandfather was blind, and our mum has volunteered with the Royal National Institute of Blind People for many years. Braille users helped shape and test BrailleGo! at every stage.</p>
+        </aside>
       </div>
     </section>
 
     <!-- How it works -->
     <section class="section section-tint" id="how">
-      <div class="wrap">
-        <h2>How it works</h2>
-        <p class="section-intro">Each Braille character is a cell of six dots in two columns of three. BrailleGo! embosses one column at a time.</p>
+      <div class="wrap how-grid">
+        <div class="how-intro">
+          <h2>How it works</h2>
+          <p>Every Braille character is a cell of six dots in two columns of three. BrailleGo! embosses one column at a time, so the print head only ever has to choose between eight patterns.</p>
+          <figure class="cell-diagram" aria-label="Diagram of a Braille cell: dots 1, 2 and 3 in the left column, dots 4, 5 and 6 in the right. The letter B uses dots 1 and 2.">
+            <div class="big-cell" aria-hidden="true">
+              <span class="d on">1</span><span class="d">4</span>
+              <span class="d on">2</span><span class="d">5</span>
+              <span class="d">3</span><span class="d">6</span>
+            </div>
+            <figcaption>The letter B is dots 1 and 2. The left column is pressed first, then the right.</figcaption>
+          </figure>
+        </div>
         <ol class="steps">
           <li>
             <h3>Connect and type</h3>
@@ -104,19 +126,19 @@
           </li>
           <li>
             <h3>Text becomes dots</h3>
-            <p>The software converts each letter into a six-dot pattern, then splits it into a left and right column of three dots.</p>
+            <p>The software converts each letter into its six-dot pattern and splits it into a left and right column.</p>
           </li>
           <li>
             <h3>Move and select</h3>
-            <p>A stepper motor drives a belt to move the print head along the rail. A small servo turns a daisywheel to pick the right pin pattern for the column.</p>
+            <p>A stepper motor drives a belt to move the print head along the rail, while a small servo turns a daisywheel to the right pin pattern.</p>
           </li>
           <li>
             <h3>Emboss</h3>
             <p>A stronger servo drives a rack and pinion that lowers the whole head, pressing up to three pins into the paper at once.</p>
           </li>
           <li>
-            <h3>Next line</h3>
-            <p>A second stepper turns the rollers to feed the paper on, so the printer can carry on to the next line.</p>
+            <h3>Feed the next line</h3>
+            <p>A second stepper turns the rollers to move the paper on, ready for the next line.</p>
           </li>
         </ol>
       </div>
@@ -125,32 +147,34 @@
     <!-- Build gallery -->
     <section class="section" id="build">
       <div class="wrap">
-        <h2>The build</h2>
-        <p class="section-intro">Two brothers, two halves: Tom designed the mechanics and Felix did the electronics and code. The final version is the third major redesign.</p>
-        <div class="gallery">
-          <figure>
-            <img class="contain on-white" src="assets/img/sketch.jpg" width="1357" height="732" loading="lazy" alt="Hand-drawn sketch of the final design, showing the motors, rack and pinion, and rotary wheel.">
-            <figcaption>Every version started on paper. This sketch set out the rack and pinion and the rotary pin wheel.</figcaption>
-          </figure>
-          <figure>
+        <div class="section-head">
+          <h2>The build</h2>
+          <p>Two brothers, two halves. Tom designed the mechanics and Felix did the electronics and code. What you see is the third major redesign.</p>
+        </div>
+        <div class="bento">
+          <figure class="b-a">
             <img src="assets/img/cad.jpg" width="1400" height="1050" loading="lazy" alt="SOLIDWORKS assembly of the frame: two aluminium extrusions, side plates, rollers and two stepper motors.">
-            <figcaption>The SOLIDWORKS assembly. Aluminium extrusions keep the frame rigid and make it easy to pack for travel.</figcaption>
+            <figcaption><strong>Frame</strong> Aluminium extrusions keep it rigid under pressure and easy to pack for travel.</figcaption>
           </figure>
-          <figure>
+          <figure class="b-b">
             <img src="assets/img/print-head.jpg" width="1050" height="1400" loading="lazy" alt="The 3D-printed print head with its servo and linear guide rods.">
-            <figcaption>The redesigned print head. A rack and pinion stops it flexing away from the paper.</figcaption>
+            <figcaption><strong>Print head</strong> A rack and pinion stops it flexing away from the paper.</figcaption>
           </figure>
-          <figure>
-            <img src="assets/img/belt-drive.jpg" width="1050" height="1400" loading="lazy" alt="A NEMA 17 stepper motor with a toothed pulley mounted on an aluminium extrusion.">
-            <figcaption>A belt drive replaced a slow, costly worm drive, making the printer faster and cheaper.</figcaption>
-          </figure>
-          <figure>
+          <figure class="b-c">
             <img src="assets/img/electronics.jpg" width="1050" height="1400" loading="lazy" alt="The control board with an ESP32, stepper drivers and a small OLED display reading BRAILLEGO.">
-            <figcaption>The electronics, with the OLED screen showing the printer’s Wi-Fi address.</figcaption>
+            <figcaption><strong>Electronics</strong> The OLED shows status and the printer’s Wi-Fi address.</figcaption>
           </figure>
-          <figure>
+          <figure class="b-d">
+            <img src="assets/img/belt-drive.jpg" width="1050" height="1400" loading="lazy" alt="A NEMA 17 stepper motor with a toothed pulley mounted on an aluminium extrusion.">
+            <figcaption><strong>Belt drive</strong> It replaced a slow, costly worm drive, making the printer faster and cheaper.</figcaption>
+          </figure>
+          <figure class="b-e">
             <img class="contain on-dark" src="assets/img/pcb.jpg" width="746" height="377" loading="lazy" alt="The custom circuit board layout in KiCad, next to a 3D render of the finished board.">
-            <figcaption>A custom circuit board designed in KiCad, about 30p each to have made.</figcaption>
+            <figcaption><strong>Circuit board</strong> Designed in KiCad, and about 30p each to have made.</figcaption>
+          </figure>
+          <figure class="b-f">
+            <img class="contain on-paper" src="assets/img/sketch.jpg" width="1357" height="732" loading="lazy" alt="Hand-drawn sketch of the final design, showing the motors, rack and pinion, and rotary wheel.">
+            <figcaption><strong>Sketches</strong> Every version started on paper.</figcaption>
           </figure>
         </div>
       </div>
@@ -162,58 +186,69 @@
         <div>
           <h2>What’s inside</h2>
           <dl class="parts">
-            <dt>ESP32</dt><dd>Microcontroller with built-in Wi-Fi</dd>
-            <dt>2 × NEMA 17 steppers</dt><dd>Move the print head and feed the paper</dd>
-            <dt>2 × DRV8825</dt><dd>Stepper motor drivers</dd>
-            <dt>SG90 servo</dt><dd>Selects the pin pattern</dd>
-            <dt>ST3215 servo + driver</dt><dd>Provides the embossing force</dd>
-            <dt>0.96″ OLED</dt><dd>Shows status messages</dd>
-            <dt>5V converter</dt><dd>Steps 12V down for the servos and ESP32</dd>
-            <dt>12V barrel jack</dt><dd>Powers everything from one plug</dd>
+            <div><dt>ESP32</dt><dd>Microcontroller with built-in Wi-Fi</dd></div>
+            <div><dt>2 × NEMA 17 steppers</dt><dd>Move the print head and feed the paper</dd></div>
+            <div><dt>2 × DRV8825</dt><dd>Stepper motor drivers</dd></div>
+            <div><dt>SG90 servo</dt><dd>Selects the pin pattern</dd></div>
+            <div><dt>ST3215 servo and driver</dt><dd>Provides the embossing force</dd></div>
+            <div><dt>0.96″ OLED</dt><dd>Shows status messages</dd></div>
+            <div><dt>5V converter</dt><dd>Steps 12V down for the servos and ESP32</dd></div>
+            <div><dt>12V barrel jack</dt><dd>Powers everything from one plug</dd></div>
           </dl>
         </div>
         <div>
           <h2>What it can print</h2>
           <p>The printer embosses whatever the software sends it, so with the right conversion tools it can produce:</p>
-          <ul class="ticks">
-            <li>Grade 1 and Grade 2 (contracted) Braille</li>
+          <ul class="chips">
+            <li>Grade 1 Braille</li>
+            <li>Grade 2 (contracted) Braille</li>
             <li>Mathematical Braille</li>
             <li>Musical Braille</li>
-            <li>Plain text files and BRF Braille files</li>
+            <li>Plain text files</li>
+            <li>BRF Braille files</li>
           </ul>
-          <h3>Software features</h3>
-          <p>A browser-based calibration wizard, settings saved across restarts, an emergency stop, a demo mode that moves without embossing, and serial controls as a fallback.</p>
+          <h3>Built-in software</h3>
+          <ul class="ticks">
+            <li>A calibration wizard in the browser, with settings saved across restarts</li>
+            <li>An emergency stop that remembers where the print head was</li>
+            <li>A demo mode that moves without embossing</li>
+            <li>Serial controls as a fallback</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Comparison -->
+    <!-- Price comparison -->
     <section class="section" id="impact">
       <div class="wrap">
-        <h2>Where BrailleGo! fits</h2>
-        <div class="table-wrap">
-          <table>
-            <caption class="sr-only">Approximate cost of Braille printers by type</caption>
-            <thead>
-              <tr><th scope="col">Type</th><th scope="col">Example</th><th scope="col">Approximate cost</th><th scope="col">Made for</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Industrial</th><td>Braillo 300 S2</td><td>Tens of thousands of pounds</td><td>Books and newspapers at volume</td></tr>
-              <tr><th scope="row">Mid-range</th><td>Index Everest-D V5</td><td>£3,000 to £4,000+</td><td>Schools and large institutions</td></tr>
-              <tr><th scope="row">Desktop</th><td>Embraille, Braille Buddy</td><td>£1,500 to £3,500+</td><td>Individuals and small offices</td></tr>
-              <tr class="ours"><th scope="row">BrailleGo!</th><td>Open source</td><td>About £90 in parts, £250 target price</td><td>Short runs anywhere, by anyone</td></tr>
-            </tbody>
-          </table>
+        <div class="section-head">
+          <h2>A fraction of the price</h2>
+          <p>Starting prices for automated Braille embossers, compared with BrailleGo!’s target price. Industrial machines like the Braillo 300 cost tens of thousands of pounds and are left off the chart.</p>
         </div>
-        <div class="two-col impact-cols">
-          <div>
-            <h3>Tested with a real use case</h3>
+        <ul class="bars" aria-label="Starting price comparison">
+          <li style="--w: 100%">
+            <span class="bar-label">Mid-range embossers <small>e.g. Index Everest-D V5, for schools and institutions</small></span>
+            <span class="bar"><span>£3,000+</span></span>
+          </li>
+          <li style="--w: 50%">
+            <span class="bar-label">Desktop embossers <small>e.g. Embraille, Braille Buddy, for individuals and small offices</small></span>
+            <span class="bar"><span>£1,500+</span></span>
+          </li>
+          <li class="ours" style="--w: 8.33%">
+            <span class="bar-label">BrailleGo! <small>Target price, from about £90 of parts</small></span>
+            <span class="bar"><span>£250</span></span>
+          </li>
+        </ul>
+
+        <div class="cases">
+          <article>
+            <h3>Tested with a real user</h3>
             <p>We piloted printing board agendas with a blind Braille user, who found switching between reports and agendas with assistive technology slow. She read our trial print easily and backed its value for meetings.</p>
-          </div>
-          <div>
+          </article>
+          <article>
             <h3>Built for places with less</h3>
             <p>Most people with sight loss live in developing countries. In Peru, for example, an affordable printer could make low-cost worksheets for schools and bring Braille to rural and underfunded regions.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -221,12 +256,12 @@
     <!-- Endorsements -->
     <section class="section section-dark" aria-labelledby="endorse-h">
       <div class="wrap">
-        <h2 id="endorse-h">What people say</h2>
+        <h2 id="endorse-h" class="sr-only">What people say</h2>
+        <figure class="feature-quote">
+          <blockquote><p>The concept of an affordable, portable Braille printer for short-run needs is brilliant, and one I can imagine many uses for.</p></blockquote>
+          <figcaption><strong>Eleanor Southwood</strong> Director of Impact and External Affairs, Fight for Sight, and former Chair of the RNIB</figcaption>
+        </figure>
         <div class="quotes">
-          <figure>
-            <blockquote><p>The concept of an affordable, portable Braille printer for short-run needs is brilliant, and one I can imagine many uses for: board meeting agendas, menus, ad hoc office needs, children’s books and bedtime reading, to name a few.</p></blockquote>
-            <figcaption><strong>Eleanor Southwood</strong> Director of Impact and External Affairs, Fight for Sight, and former Chair of the RNIB</figcaption>
-          </figure>
           <figure>
             <blockquote><p>BrailleGo! is a product that has the potential to significantly increase independence for vision impaired individuals globally.</p></blockquote>
             <figcaption><strong>Ahmed Hassan</strong> Level 3 qualified Braillist, TPT volunteer and computer science student</figcaption>
@@ -242,12 +277,25 @@
     <!-- Open source / files -->
     <section class="section" id="files">
       <div class="wrap">
-        <div class="files-card">
-          <div>
+        <div class="files-panel">
+          <div class="files-text">
             <h2>Build your own</h2>
-            <p>BrailleGo! is open source. The repository has the 3D-print and CAD files, the ESP32 code, the circuit board design, a parts list and step-by-step build instructions.</p>
+            <p>BrailleGo! is open source. Everything you need to make one is in our GitHub repository.</p>
+            <a class="btn btn-primary btn-large" href="https://github.com/huntfelix/BrailleGoFiles">Open BrailleGoFiles on GitHub</a>
           </div>
-          <a class="btn btn-primary btn-large" href="https://github.com/huntfelix/BrailleGoFiles">Open the BrailleGoFiles repository on GitHub</a>
+          <a class="repo-card" href="https://github.com/huntfelix/BrailleGoFiles" aria-label="BrailleGoFiles repository on GitHub">
+            <span class="repo-name">
+              <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 1 1-1.06 1.06A2.49 2.49 0 0 1 2 11.5v-9Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.49 2.49 0 0 1 4.5 9h8V1.5Z"/></svg>
+              huntfelix / <b>BrailleGoFiles</b>
+            </span>
+            <ul class="repo-list">
+              <li>3D-print and CAD files</li>
+              <li>ESP32 firmware</li>
+              <li>Circuit board design</li>
+              <li>Parts list</li>
+              <li>Step-by-step build guide</li>
+            </ul>
+          </a>
         </div>
       </div>
     </section>
@@ -255,17 +303,31 @@
     <!-- Team -->
     <section class="section section-tint" id="team">
       <div class="wrap team-grid">
-        <img class="team-photo" src="assets/img/team.jpg" width="1052" height="1400" alt="Felix and Tom Hunt standing side by side.">
+        <figure class="team-photo">
+          <img src="assets/img/team.jpg" width="1052" height="1400" alt="Felix and Tom Hunt standing side by side.">
+          <figcaption>Felix (left) and Tom</figcaption>
+        </figure>
         <div>
-          <h2>Hunt Robotics</h2>
-          <p>We’re Tom and Felix Hunt, two brothers from Leeds who love engineering and robotics. We built BrailleGo! for the World Robot Olympiad 2026, where the theme is Robots Meet Culture.</p>
-          <dl class="people">
-            <div><dt>Tom Hunt, 19</dt><dd>Mechanical design: the frame, print head and every custom part</dd></div>
-            <div><dt>Felix Hunt, 16</dt><dd>Electronics and code: wiring, power, circuit board and firmware</dd></div>
-            <div><dt>Simon Hunt</dt><dd>Coach</dd></div>
-          </dl>
-          <h3>What’s next</h3>
-          <p>Faster printing with a micro stepper in place of the small servo, a punch mechanism that meets the full Braille specification, and a proper enclosure to protect the electronics.</p>
+          <h2>Meet Hunt Robotics</h2>
+          <p class="team-lede">We’re Tom and Felix Hunt, two brothers from Leeds who love engineering and robotics. We built BrailleGo! for the World Robot Olympiad 2026, where the theme is Robots Meet Culture.</p>
+          <div class="people">
+            <div class="person">
+              <h3>Tom Hunt <span>19</span></h3>
+              <p>Mechanical design: the frame, print head and every custom part.</p>
+            </div>
+            <div class="person">
+              <h3>Felix Hunt <span>16</span></h3>
+              <p>Electronics and code: wiring, power, the circuit board and firmware.</p>
+            </div>
+            <div class="person">
+              <h3>Simon Hunt</h3>
+              <p>Coach.</p>
+            </div>
+          </div>
+          <div class="next">
+            <h3>What’s next</h3>
+            <p>Faster printing with a micro stepper in place of the small servo, a punch mechanism that meets the full Braille specification, and a proper enclosure to protect the electronics.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -277,7 +339,7 @@
         <ul class="logo-row">
           <li><img src="assets/logos/hunt-robotics.png" alt="Hunt Robotics" data-fallback="Hunt Robotics"></li>
           <li><img src="assets/logos/wro.png" alt="World Robot Olympiad" data-fallback="World Robot Olympiad"></li>
-          <li><img src="assets/logos/stempura.png" alt="Stempura" data-fallback="Stempura"></li>
+          <li><img src="assets/logos/stempura.png" alt="STEMpura" data-fallback="STEMpura"></li>
           <li><img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB"></li>
         </ul>
       </div>
@@ -286,8 +348,20 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <p>© <span id="year">2026</span> Hunt Robotics, Leeds, England.</p>
-      <p><a href="https://github.com/huntfelix/BrailleGoFiles">Files and build guide on GitHub</a></p>
+      <div class="footer-brand">
+        <img src="assets/logos/hunt-chip.png" alt="" width="40" height="39">
+        <div>
+          <strong>BrailleGo!</strong>
+          <span>by Hunt Robotics, Leeds, England</span>
+        </div>
+      </div>
+      <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
+      <nav aria-label="Footer">
+        <a href="#how">How it works</a>
+        <a href="#team">Team</a>
+        <a href="https://github.com/huntfelix/BrailleGoFiles">Files on GitHub</a>
+      </nav>
+      <p class="copy">© <span id="year">2026</span> Hunt Robotics</p>
     </div>
   </footer>
 
