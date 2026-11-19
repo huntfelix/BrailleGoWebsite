@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Licences – BrailleGo!</title>
+  <meta name="description" content="How BrailleGo! is licensed: CERN-OHL-S-2.0 for the hardware, GPL-3.0-or-later for the firmware and CC BY-SA 4.0 for the guides. Build it, change it and sell it, as long as you share your changes.">
+  <meta name="theme-color" content="#1A0033">
+  <link rel="icon" href="assets/logos/hunt-chip.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Hunt Robotics – BrailleGo! home">
+        <img class="brand-logo" src="assets/logos/hunt-robotics.png" alt="Hunt Robotics" width="495" height="600">
+        <span class="brand-name">BrailleGo!</span>
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html#how">How to use it</a></li>
+          <li><a href="index.html#try">Try it</a></li>
+          <li><a href="index.html#build">The build</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a class="nav-cta" href="index.html#files">Get the files</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-head">
+      <div class="wrap">
+        <p class="crumb"><a href="index.html">BrailleGo!</a> <span aria-hidden="true">/</span> Licences</p>
+        <h1>Free to build, change and sell</h1>
+        <p class="lede">BrailleGo! is open source hardware. Anyone can make one, improve it or sell it. In return, we ask two things: credit the original, and share your changes under the same terms so everyone benefits.</p>
+      </div>
+    </section>
+
+    <!-- What covers what -->
+    <section class="section" aria-labelledby="map-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="map-h">Which licence covers what</h2>
+          <p>Each part of the project uses the licence written for that kind of work. The full legal text of each is in the <a href="https://github.com/huntfelix/BrailleGoFiles">BrailleGoFiles repository</a>.</p>
+        </div>
+        <div class="lic-grid">
+          <article class="lic-card" id="hardware">
+            <span class="lic-kind">Hardware</span>
+            <h3>CERN-OHL-S-2.0</h3>
+            <p class="lic-full">CERN Open Hardware Licence, strongly reciprocal</p>
+            <ul>
+              <li>3D-print and CAD files</li>
+              <li>Circuit board design</li>
+              <li>Parts list</li>
+            </ul>
+            <a class="lic-link" href="https://ohwr.org/cern_ohl_s_v2.txt">Read the licence</a>
+          </article>
+          <article class="lic-card lic-red" id="software">
+            <span class="lic-kind">Firmware and software</span>
+            <h3>GPL-3.0-or-later</h3>
+            <p class="lic-full">GNU General Public License, version 3 or later</p>
+            <ul>
+              <li>ESP32 firmware</li>
+              <li>The printer’s web page for typing and printing</li>
+              <li>Any helper scripts</li>
+            </ul>
+            <a class="lic-link" href="https://www.gnu.org/licenses/gpl-3.0.html">Read the licence</a>
+          </article>
+          <article class="lic-card lic-black" id="docs">
+            <span class="lic-kind">Guides and photos</span>
+            <h3>CC BY-SA 4.0</h3>
+            <p class="lic-full">Creative Commons Attribution-ShareAlike 4.0</p>
+            <ul>
+              <li>Step-by-step build guide</li>
+              <li>Documentation and diagrams</li>
+              <li>Build photos</li>
+            </ul>
+            <a class="lic-link" href="https://creativecommons.org/licenses/by-sa/4.0/">Read the licence</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Can / must -->
+    <section class="section section-tint" aria-labelledby="cm-h">
+      <div class="wrap">
+        <h2 id="cm-h" class="sr-only">What you can and must do</h2>
+        <div class="cm-grid">
+          <div class="cm cm-can">
+            <h3>You can</h3>
+            <ul>
+              <li>Build a BrailleGo! for yourself, a school, a library or a charity</li>
+              <li>Change the design, fix it or add features</li>
+              <li>Make and sell printers, kits or circuit boards</li>
+              <li>Translate the guides and share them</li>
+            </ul>
+          </div>
+          <div class="cm cm-must">
+            <h3>If you share or sell it, you must</h3>
+            <ul>
+              <li>Keep our copyright and licence notices on the files and on the board</li>
+              <li>Publish the source files for your version (design files and firmware code) under the same licences</li>
+              <li>Mark which files you changed and when</li>
+              <li>Give buyers a link to where they can get those files</li>
+            </ul>
+          </div>
+        </div>
+        <p class="cm-note">Building one just for yourself? You don’t have to publish anything, though we’d love to see it.</p>
+      </div>
+    </section>
+
+    <!-- Credit -->
+    <section class="section" aria-labelledby="credit-h">
+      <div class="wrap narrow-col">
+        <h2 id="credit-h">How to credit us</h2>
+        <p>Put a line like this in your README, product page or guide:</p>
+        <figure class="credit">
+          <pre id="credit-text">Based on BrailleGo! by Hunt Robotics (Tom and Felix Hunt)
+https://github.com/huntfelix/BrailleGoFiles
+Hardware: CERN-OHL-S-2.0 · Firmware: GPL-3.0-or-later · Docs: CC BY-SA 4.0</pre>
+          <button class="copy-btn" type="button" data-copy="credit-text">Copy</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section class="section section-tint" aria-labelledby="safety-h">
+      <div class="wrap narrow-col">
+        <h2 id="safety-h">No warranty, and please build safely</h2>
+        <p>BrailleGo! is a student project shared “as is”, without any warranty. All three licences say so in full, and you build and use it at your own risk.</p>
+        <ul class="safety">
+          <li><strong>Power:</strong> use a ready-made, CE or UKCA marked 12&nbsp;V power supply. Don’t build your own mains power stage.</li>
+          <li><strong>Moving parts:</strong> keep fingers and hair away from the belts, rollers and print head while it’s running.</li>
+          <li><strong>Children:</strong> an adult should supervise younger builders and users.</li>
+          <li><strong>Selling units or kits:</strong> you become the manufacturer. That makes you responsible for product safety and for rules such as CE/UKCA and electromagnetic compatibility testing where you sell.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contributing + other -->
+    <section class="section" aria-labelledby="more-h">
+      <div class="wrap">
+        <h2 id="more-h" class="sr-only">More details</h2>
+        <div class="more-grid">
+          <article>
+            <h3>Contributing</h3>
+            <p>Improvements are welcome. Contributions are accepted under the same licence as the part of the project they change. Please sign off each commit (<code>git commit -s</code>) to confirm you have the right to submit it, following the <a href="https://developercertificate.org/">Developer Certificate of Origin</a>.</p>
+          </article>
+          <article>
+            <h3>Other people’s work</h3>
+            <p>Anything we use from other projects, such as libraries in the firmware, keeps its own licence. We note these next to the files in the repository.</p>
+          </article>
+          <article id="website">
+            <h3>This website</h3>
+            <p>The website code is MIT licensed and its text and project photos are CC BY-SA 4.0. The logos of Hunt Robotics, WRO, STEMpura and RNIB, the BrailleGo! name, the quotes and the team photo are not covered by these licences.</p>
+          </article>
+        </div>
+        <p class="fineprint">This page is a plain-English summary to help you, not legal advice. If it differs from the licence texts, the licence texts apply. Questions? <a href="https://github.com/huntfelix/BrailleGoFiles/issues">Open an issue on GitHub</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-dots" aria-hidden="true"></div>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <strong>BrailleGo!</strong>
+        <span>by Hunt Robotics</span>
+      </div>
+      <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
+      <nav aria-label="Footer">
+        <a href="index.html#how">How to use it</a>
+        <a href="index.html#team">Team</a>
+        <a href="licence.html" aria-current="page">Licences</a>
+        <a href="https://github.com/huntfelix/BrailleGoFiles">Files on GitHub</a>
+      </nav>
+      <p class="copy">© 2026 Hunt Robotics. Open source hardware: <a href="licence.html#hardware">CERN-OHL-S-2.0</a> · <a href="licence.html#software">GPL-3.0-or-later</a> · <a href="licence.html#docs">CC BY-SA 4.0</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = document.getElementById(btn.dataset.copy).textContent;
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+        }).catch(function () {});
+      });
+    });
+  </script>
+</body>
+</html>
