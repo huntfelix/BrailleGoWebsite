@@ -62,6 +62,6 @@ This repository holds the website only. The printer itself (hardware, firmware a
 | Website code (`*.html`, `style.css`, `script.js`) | [MIT](LICENSE) |
 | Website text and project photos in `assets/img/` (except `team.jpg`) | [CC BY-SA 4.0](LICENSES/CC-BY-SA-4.0.txt) |
 
-**Not covered by either licence:** the Hunt Robotics, WRO, STEMpura and RNIB logos in `assets/logos/`, the BrailleGo! and Hunt Robotics names, the quotes in "What people say", and the team photo (`assets/img/team.jpg`). They belong to their respective owners.
+**Not covered by either licence:** the Hunt Robotics, WRO, STEMpura and RNIB logos in `assets/logos/`, the BrailleGo! and Hunt Robotics names, the quotes in "What people say", the team photo (`assets/img/team.jpg`), and the posters in `assets/img/posters/`. They belong to their respective owners.
 
 Copyright © 2026 Tom Hunt and Felix Hunt (Hunt Robotics).

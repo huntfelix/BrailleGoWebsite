@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -114,7 +114,10 @@
         </div>
         <aside class="origin">
           <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
-          <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Braille users helped shape and test BrailleGo! at every stage.</p>
+          <div class="origin-text">
+            <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Our Braille print-outs were tested and validated by the former chair of the RNIB. Braille users helped shape and test BrailleGo! at every stage.</p>
+            <a class="btn btn-primary btn-small" href="https://www.rnib.org.uk/" rel="noopener">Make a donation</a>
+          </div>
         </aside>
       </div>
     </section>
@@ -161,7 +164,7 @@
       <div class="wrap try-grid">
         <div class="try-head">
           <h2>See your words in Braille</h2>
-          <p>Type something and watch it turn into the dot patterns BrailleGo! embosses. This is uncontracted (Grade 1) Braille.</p>
+          <p>Type something and watch it turn into the dot patterns BrailleGo! prints.</p>
         </div>
         <div class="try-panel">
           <label class="try-label" for="try-input">Your text</label>
@@ -293,6 +296,9 @@
               <li>Step-by-step build guide</li>
             </ul>
           </a>
+          <div class="files-stories">
+            <a class="btn btn-primary btn-large" href="stories.html">Contributor Stories</a>
+          </div>
         </div>
       </div>
     </section>
@@ -369,6 +375,7 @@
       <div class="footer-brand">
         <strong>BrailleGo!</strong>
         <span>by Hunt Robotics</span>
+        <img class="footer-logo" src="assets/logos/hunt-chip.png" alt="Hunt Robotics logo" width="40" height="39">
       </div>
       <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
       <nav aria-label="Footer">

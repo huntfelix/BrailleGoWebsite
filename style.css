@@ -277,6 +277,9 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 }
 .origin img { height: 52px; width: auto; flex: none; }
 .origin p { margin: 0; color: var(--muted); }
+.origin-text .btn { margin-top: .85rem; }
+.btn-small { padding: .6rem 1.1rem; font-size: .98rem; }
+.origin .btn-primary:hover { background: var(--purple); color: #fff; }
 @media (max-width: 560px) { .origin { flex-direction: column; align-items: flex-start; } }
 
 /* ---------- How to use ---------- */
@@ -538,6 +541,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .footer-brand { display: flex; flex-direction: column; }
 .footer-brand strong { display: block; color: #fff; font-size: 1.1rem; }
 .footer-brand span { font-size: .92rem; }
+.footer-logo { width: 40px; height: auto; margin-top: .7rem; background: #fff; border-radius: 8px; padding: 4px; box-sizing: content-box; }
 .footer-braille { margin: 0; font-size: 1.4rem; letter-spacing: .12em; color: rgba(255,255,255,.25); justify-self: center; }
 .footer nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
 .footer a { color: #fff; text-decoration: none; }
@@ -677,3 +681,23 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 }
 .story-empty p { color: var(--muted); margin: 0 auto 1.25rem; }
 @media (max-width: 380px) { .try-cells { --tdot: 8px; } .tword { gap: .4rem; } }
+
+/* Build your own: stories button */
+.files-stories { grid-column: 1 / -1; display: flex; justify-content: center; padding-top: .5rem; }
+.files-stories .btn-primary { box-shadow: 0 14px 30px -14px rgba(0,0,0,.6); }
+
+/* Posters on the stories page */
+.posters { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+.poster {
+  position: relative; display: block; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff;
+}
+.poster img { width: 100%; height: auto; transition: transform .3s ease; }
+.poster:hover img { transform: scale(1.02); }
+.poster-hint {
+  display: block; padding: .55rem .9rem; border-top: 1px solid var(--line);
+  color: var(--red-text); font-size: .92rem; font-weight: 700;
+}
+.poster:hover .poster-hint { text-decoration: underline; }
+@media (max-width: 760px) { .posters { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .poster img { transition: none; } }
