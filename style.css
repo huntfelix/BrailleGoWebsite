@@ -201,6 +201,8 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .award { margin-top: 2.75rem; }
 .award-text p { margin: 0 0 .4rem; font-size: .84rem; font-style: italic; line-height: 1.5; color: var(--on-dark-muted); max-width: none; }
 .award-text p:last-child { margin-bottom: 0; }
+.award-text a { color: #fff; font-weight: 700; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.award-text a:hover { color: var(--red); }
 @media (max-width: 480px) { .award { margin-top: 1rem; } }
 
 /* ---------- Buttons ---------- */
