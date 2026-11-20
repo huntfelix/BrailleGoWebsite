@@ -686,18 +686,16 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .files-stories { grid-column: 1 / -1; display: flex; justify-content: center; padding-top: .5rem; }
 .files-stories .btn-primary { box-shadow: 0 14px 30px -14px rgba(0,0,0,.6); }
 
-/* Posters on the stories page */
-.posters { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
-.poster {
-  position: relative; display: block; border-radius: var(--radius); overflow: hidden;
-  border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff;
+/* Poster thumbnails in the Zagreb section */
+.poster-thumbs { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+.poster-thumbs a { display: block; width: 13.5rem; text-decoration: none; color: var(--ink); }
+.poster-thumbs img {
+  width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.poster img { width: 100%; height: auto; transition: transform .3s ease; }
-.poster:hover img { transform: scale(1.02); }
-.poster-hint {
-  display: block; padding: .55rem .9rem; border-top: 1px solid var(--line);
-  color: var(--red-text); font-size: .92rem; font-weight: 700;
-}
-.poster:hover .poster-hint { text-decoration: underline; }
-@media (max-width: 760px) { .posters { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { .poster img { transition: none; } }
+.poster-thumbs a:hover img { transform: translateY(-3px); box-shadow: 0 16px 34px -16px rgba(26,0,51,.45); }
+.poster-thumbs span { display: block; margin-top: .45rem; font-size: .9rem; font-weight: 700; }
+.poster-thumbs a:hover span { color: var(--red-text); }
+@media (max-width: 520px) { .poster-thumbs li { flex: 1 1 0; min-width: 0; } .poster-thumbs a { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .poster-thumbs img { transition: none; } }
