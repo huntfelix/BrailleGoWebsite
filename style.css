@@ -516,7 +516,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .stempura-logo { height: 110px; width: auto; margin: 0 0 1rem -.5rem; }
 .zagreb-text p { color: var(--muted); }
 .zagreb-text p:last-child { margin-bottom: 0; }
-@media (max-width: 800px) { .zagreb-grid { grid-template-columns: 1fr; } .zagreb-photo { max-width: 26rem; } }
+@media (max-width: 800px) { .zagreb-grid { grid-template-columns: 1fr; } .zagreb-photo { max-width: 26rem; order: 2; } }
 
 /* ---------- Logos ---------- */
 .supporters { padding: clamp(2.25rem, 4vw, 3rem) 0; border-top: 1px solid var(--line); }
