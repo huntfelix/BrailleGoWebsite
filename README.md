@@ -13,7 +13,6 @@ Build files and instructions: https://github.com/huntfelix/BrailleGoFiles
 - `script.js` – draws the embossed braille strip and handles missing logos
 - `assets/img/` – photos from the project report
 - `assets/logos/` – logos
-- `404.html` – shown for missing pages
 
 ## Publishing
 
