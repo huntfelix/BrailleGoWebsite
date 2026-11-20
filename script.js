@@ -133,10 +133,18 @@ function makeCell(ch, delayFor) {
     var cells = translate(input.value);
     out.textContent = '';
     var count = 0, dots = 0;
+    // Keep each word's cells together so words don't break across lines.
+    var word = null;
     cells.forEach(function (c, i) {
+      if (c.space) { word = null; return; }
+      if (!word) {
+        word = document.createElement('span');
+        word.className = 'tword';
+        out.appendChild(word);
+      }
       var wrap = document.createElement('span');
-      wrap.className = 'tcell' + (c.space ? ' space' : '');
-      if (!c.space) {
+      wrap.className = 'tcell';
+      {
         wrap.appendChild(makeCell(c.b));
         var lab = document.createElement('small');
         lab.textContent = c.label;
@@ -145,7 +153,7 @@ function makeCell(ch, delayFor) {
         dots += (c.b.codePointAt(0) - 0x2800).toString(2).split('1').length - 1;
         if (animateLast && i === cells.length - 1) wrap.classList.add('pop');
       }
-      out.appendChild(wrap);
+      word.appendChild(wrap);
     });
     document.getElementById('stat-cells').textContent = count;
     document.getElementById('stat-cols').textContent = count * 2;
