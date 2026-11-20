@@ -687,7 +687,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .files-stories .btn-primary { box-shadow: 0 14px 30px -14px rgba(0,0,0,.6); }
 
 /* Posters on the stories page */
-.posters { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+.posters { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
 .poster {
   position: relative; display: block; border-radius: var(--radius); overflow: hidden;
   border: 1px solid var(--line); box-shadow: var(--shadow); background: #fff;
