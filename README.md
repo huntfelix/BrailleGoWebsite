@@ -9,10 +9,44 @@ Build files and instructions: https://github.com/huntfelix/BrailleGoFiles
 
 - `index.html` – the home page
 - `licence.html` – plain-English summary of the project's licences
+- `stories.html` – contributor stories page (stories come from `stories.json`)
+- `stories.json` – the published contributor stories
 - `style.css` – styles, using the Hunt Robotics colours (`#1A0033` purple, `#FF2700` red)
-- `script.js` – draws the embossed braille strip and handles missing logos
+- `script.js` – the animated Braille title, the Braille translator, the photo reel, and the stories list
 - `assets/img/` – photos from the project report
 - `assets/logos/` – logos
+- `assets/stories/` – photos for contributor stories
+
+## Publishing a contributor story
+
+Contributors can't post directly. They send a build report by email (the "Submit a build report" button on the Stories page emails both of us with a template). To publish one you've approved:
+
+1. Make sure they said **yes** to publishing in their email.
+2. Resize their photos to about 1200 px wide and upload them to `assets/stories/`, for example `assets/stories/2026-12-school-library-1.jpg`.
+3. Add an entry to `stories.json`. Stories are shown newest first, by `date`.
+
+```json
+[
+  {
+    "title": "A BrailleGo! for our school library",
+    "date": "2026-12-01",
+    "author": "Sam Taylor",
+    "location": "Bristol, UK",
+    "tags": ["Build", "Firmware"],
+    "body": [
+      "First paragraph of the story.",
+      "Second paragraph."
+    ],
+    "photos": [
+      { "src": "assets/stories/2026-12-school-library-1.jpg", "alt": "Describe what the photo shows" }
+    ],
+    "link": "https://github.com/someone/their-fork",
+    "linkText": "See their build log"
+  }
+]
+```
+
+`tags`, `photos`, `link` and `linkText` are optional, and up to four photos are shown. Separate stories with a comma. Check the file is valid JSON (for example at jsonlint.com) before committing, or the page will show "No stories yet".
 
 ## Publishing
 

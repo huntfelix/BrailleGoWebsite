@@ -40,9 +40,24 @@ function makeCell(ch, delayFor) {
     var letter = document.createElement('span');
     letter.className = 'letter';
     letter.textContent = (letters[i] || '').trim();
+    if (!letter.textContent) slot.classList.add('blank');
     slot.appendChild(letter);
     el.appendChild(slot);
   });
+
+  // In text mode each slot narrows to its own letter, so the word closes up
+  // into "BrailleGo!". Measure the letters, and lock the strip to the Braille width.
+  function measure() {
+    el.style.width = '';
+    el.querySelectorAll('.slot').forEach(function (slot) {
+      var l = slot.querySelector('.letter');
+      slot.style.setProperty('--lw', l.textContent ? l.offsetWidth + 'px' : '0px');
+    });
+    if (!el.classList.contains('as-text')) el.style.width = el.offsetWidth + 'px';
+  }
+  measure();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  window.addEventListener('resize', measure);
 
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
@@ -142,6 +157,15 @@ function makeCell(ch, delayFor) {
   render(false);
 })();
 
+// Header: logo starts large and shrinks once the page is scrolled
+(function () {
+  var nav = document.getElementById('nav');
+  if (!nav) return;
+  function update() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
 // Show the organisation's name if a logo file is missing
 document.querySelectorAll('img[data-fallback]').forEach(function (img) {
   function swap() {
@@ -156,4 +180,66 @@ document.querySelectorAll('img[data-fallback]').forEach(function (img) {
   else img.addEventListener('error', swap);
 });
 
-document.getElementById('year').textContent = new Date().getFullYear();
+var yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Contributor stories page: list the stories in stories.json, newest first.
+(function () {
+  var list = document.getElementById('story-list');
+  if (!list) return;
+  var empty = document.getElementById('story-empty');
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+  function formatDate(iso) {
+    var d = new Date(iso + 'T12:00:00');
+    return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  fetch('stories.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .catch(function () { return []; })
+    .then(function (stories) {
+      stories = (Array.isArray(stories) ? stories : []).filter(function (s) { return s && s.title; });
+      stories.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+      if (!stories.length) { if (empty) empty.hidden = false; return; }
+
+      stories.forEach(function (s) {
+        var card = el('article', 'story');
+        var photos = Array.isArray(s.photos) ? s.photos : [];
+        if (photos.length) {
+          var gallery = el('div', 'story-photos' + (photos.length > 1 ? ' multi' : ''));
+          photos.slice(0, 4).forEach(function (p) {
+            var img = document.createElement('img');
+            img.src = p.src; img.alt = p.alt || ''; img.loading = 'lazy';
+            gallery.appendChild(img);
+          });
+          card.appendChild(gallery);
+        }
+        var body = el('div', 'story-body');
+        var meta = el('p', 'story-meta');
+        meta.textContent = [s.author, s.location, s.date ? formatDate(s.date) : ''].filter(Boolean).join(' · ');
+        if (Array.isArray(s.tags) && s.tags.length) {
+          var tags = el('ul', 'story-tags');
+          s.tags.forEach(function (t) { tags.appendChild(el('li', '', t)); });
+          body.appendChild(tags);
+        }
+        body.appendChild(el('h3', '', s.title));
+        body.appendChild(meta);
+        (Array.isArray(s.body) ? s.body : [s.body || s.summary || '']).forEach(function (para) {
+          if (para) body.appendChild(el('p', '', para));
+        });
+        if (s.link && /^https:\/\//.test(s.link)) {
+          var a = el('a', 'story-link', s.linkText || 'Read more');
+          a.href = s.link; a.rel = 'noopener';
+          body.appendChild(a);
+        }
+        card.appendChild(body);
+        list.appendChild(card);
+      });
+    });
+})();
