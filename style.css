@@ -701,3 +701,9 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .poster-thumbs a:hover span { color: var(--red-text); }
 @media (max-width: 520px) { .poster-thumbs li { flex: 1 1 0; min-width: 0; } .poster-thumbs a { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .poster-thumbs img { transition: none; } }
+
+/* Logo row: WRO in the middle on wider screens; phones keep the HTML order (STEMpura second) */
+@media (min-width: 561px) {
+  .logo-row li:nth-child(2) { order: 3; }
+  .logo-row li:nth-child(3) { order: 2; }
+}
