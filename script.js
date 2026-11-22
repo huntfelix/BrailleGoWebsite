@@ -174,6 +174,52 @@ function makeCell(ch, delayFor) {
   window.addEventListener('scroll', update, { passive: true });
 })();
 
+// Main menu: drop-downs on wide screens, one menu button on phones
+(function () {
+  var nav = document.getElementById('nav');
+  if (!nav) return;
+  var toggle = nav.querySelector('.menu-toggle');
+  var groups = Array.from(nav.querySelectorAll('.dd'));
+
+  function closeAll(except) {
+    groups.forEach(function (g) {
+      if (g === except) return;
+      g.classList.remove('open');
+      g.querySelector('.dd-btn').setAttribute('aria-expanded', 'false');
+    });
+  }
+  function setMenu(open) {
+    nav.classList.toggle('menu-open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  groups.forEach(function (g) {
+    var btn = g.querySelector('.dd-btn');
+    btn.addEventListener('click', function () {
+      var open = !g.classList.contains('open');
+      closeAll(g);
+      g.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  if (toggle) toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('menu-open')); });
+
+  // Close after choosing a link, clicking elsewhere, or pressing Escape
+  nav.querySelectorAll('.dd-list a').forEach(function (a) {
+    a.addEventListener('click', function () { closeAll(); setMenu(false); });
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target)) { closeAll(); setMenu(false); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var openBtn = nav.querySelector('.dd.open .dd-btn');
+    closeAll(); 
+    if (nav.classList.contains('menu-open')) { setMenu(false); toggle.focus(); }
+    else if (openBtn) openBtn.focus();
+  });
+})();
+
 // Show the organisation's name if a logo file is missing
 document.querySelectorAll('img[data-fallback]').forEach(function (img) {
   function swap() {
