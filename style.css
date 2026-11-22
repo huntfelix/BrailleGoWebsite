@@ -773,3 +773,11 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 /* Team heading with the Hunt Robotics chip */
 .team-h { display: flex; align-items: center; gap: .6rem; }
 .team-h-logo { height: 1.1em; width: auto; flex: none; }
+
+/* Build your own: single column with two buttons */
+.files-panel { grid-template-columns: 1fr; }
+.files-text { max-width: 46rem; }
+.files-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.award-text a { white-space: normal; }
+#build { padding-bottom: 0; }
+#files { padding-top: clamp(1.25rem, 2.5vw, 2rem); }

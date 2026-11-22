@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -26,30 +26,28 @@
         <div class="menu-panel" id="menu-panel">
           <ul class="menu">
             <li class="dd">
+              <button class="dd-btn is-current" type="button" aria-expanded="false" aria-controls="dd-printer">The printer<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              <ul class="dd-list" id="dd-printer">
+                <li><a href="index.html#build">The build</a></li>
+                <li><a href="index.html#files">Build your own</a></li>
+                <li><a href="stories.html" aria-current="page">Contributor stories</a></li>
+                <li><a href="licence.html">Licences</a></li>
+              </ul>
+            </li>
+            <li class="dd">
               <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-about">About<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
               <ul class="dd-list" id="dd-about">
                 <li><a href="index.html#about">The problem and our answer</a></li>
-                <li><a href="index.html#how">How to use it</a></li>
-                <li><a href="index.html#try">Try it in Braille</a></li>
-              </ul>
-            </li>
-            <li class="dd">
-              <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-printer">The printer<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-              <ul class="dd-list" id="dd-printer">
-                <li><a href="index.html#build">The build</a></li>
                 <li><a href="index.html#impact">Price comparison</a></li>
                 <li><a href="index.html#quotes">What people say</a></li>
-                <li><a href="index.html#files">Build your own</a></li>
               </ul>
             </li>
             <li class="dd">
-              <button class="dd-btn is-current" type="button" aria-expanded="false" aria-controls="dd-team">Team<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-team">Team<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
               <ul class="dd-list" id="dd-team">
                 <li><a href="index.html#team">Meet Hunt Robotics</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="index.html#zagreb">Zagreb and STEMpura</a></li>
-                <li><a href="stories.html" aria-current="page">Contributor stories</a></li>
-                <li><a href="licence.html">Licences</a></li>
               </ul>
             </li>
           </ul>
@@ -77,7 +75,7 @@
             <h2 id="submit-h">Submit a build report</h2>
             <p>Built a BrailleGo!, forked the design or deployed one in a school, library or charity? Send us a build report. We’ll review it and publish the best ones here, with credit to you.</p>
             <a class="btn btn-primary btn-large" id="submit-btn"
-               href="mailto:thomsubhunt@gmail.com,huntfelix41@gmail.com?subject=BrailleGo!%20build%20report&amp;body=Name%20or%20handle%3A%0D%0ACountry%3A%0D%0A%0D%0AHardware%20revision%20or%20fork%3A%0D%0AMechanical%20changes%20(CAD%2C%20print%20settings%2C%20materials)%3A%0D%0AElectrical%20changes%20(PCB%2C%20drivers%2C%20power%20supply)%3A%0D%0AFirmware%20version%20or%20commit%20hash%3A%0D%0ACalibration%20settings%20(step%20distances%2C%20servo%20angles)%3A%0D%0A%0D%0APrint%20results%20(paper%20weight%2C%20dot%20height%2C%20cells%20per%20line%2C%20speed)%3A%0D%0AIssues%20and%20fixes%3A%0D%0AUse%20case%20(who%20uses%20it%20and%20what%20you%20print)%3A%0D%0A%0D%0ALinks%20(repository%2C%20CAD%2C%20video)%3A%0D%0A%0D%0APhotos%3A%20please%20attach%20photos%20of%20the%20build%20and%20an%20embossed%20page.%0D%0A%0D%0AI%20agree%20to%20this%20report%20and%20my%20photos%20being%20published%20on%20the%20BrailleGo!%20website%20with%20credit%3A%20yes%20%2F%20no%0D%0A">Submit a build report</a>
+               href="mailto:thomsebhunt@gmail.com,huntfelix41@gmail.com?subject=BrailleGo!%20build%20report&amp;body=Name%20or%20handle%3A%0D%0ACountry%3A%0D%0A%0D%0AHardware%20revision%20or%20fork%3A%0D%0AMechanical%20changes%20(CAD%2C%20print%20settings%2C%20materials)%3A%0D%0AElectrical%20changes%20(PCB%2C%20drivers%2C%20power%20supply)%3A%0D%0AFirmware%20version%20or%20commit%20hash%3A%0D%0ACalibration%20settings%20(step%20distances%2C%20servo%20angles)%3A%0D%0A%0D%0APrint%20results%20(paper%20weight%2C%20dot%20height%2C%20cells%20per%20line%2C%20speed)%3A%0D%0AIssues%20and%20fixes%3A%0D%0AUse%20case%20(who%20uses%20it%20and%20what%20you%20print)%3A%0D%0A%0D%0ALinks%20(repository%2C%20CAD%2C%20video)%3A%0D%0A%0D%0APhotos%3A%20please%20attach%20photos%20of%20the%20build%20and%20an%20embossed%20page.%0D%0A%0D%0AI%20agree%20to%20this%20report%20and%20my%20photos%20being%20published%20on%20the%20BrailleGo!%20website%20with%20credit%3A%20yes%20%2F%20no%0D%0A">Submit a build report</a>
             <p class="submit-note">Opens an email to Tom and Felix with a report template filled in. Attach your photos before sending.</p>
           </div>
           <div class="submit-checklist">
@@ -124,7 +122,7 @@
       </div>
       <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
       <nav aria-label="Footer">
-        <a href="index.html#how">How to use it</a>
+        <a href="index.html#build">The build</a>
         <a href="index.html#team">Team</a>
         <a href="index.html#contact">Contact</a>
         <a href="stories.html" aria-current="page">Stories</a>
@@ -135,6 +133,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>

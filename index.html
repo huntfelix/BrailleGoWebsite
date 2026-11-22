@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -29,20 +29,20 @@
         <div class="menu-panel" id="menu-panel">
           <ul class="menu">
             <li class="dd">
-              <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-about">About<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-              <ul class="dd-list" id="dd-about">
-                <li><a href="#about">The problem and our answer</a></li>
-                <li><a href="#how">How to use it</a></li>
-                <li><a href="#try">Try it in Braille</a></li>
-              </ul>
-            </li>
-            <li class="dd">
               <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-printer">The printer<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
               <ul class="dd-list" id="dd-printer">
                 <li><a href="#build">The build</a></li>
+                <li><a href="#files">Build your own</a></li>
+                <li><a href="stories.html">Contributor stories</a></li>
+                <li><a href="licence.html">Licences</a></li>
+              </ul>
+            </li>
+            <li class="dd">
+              <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-about">About<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+              <ul class="dd-list" id="dd-about">
+                <li><a href="#about">The problem and our answer</a></li>
                 <li><a href="#impact">Price comparison</a></li>
                 <li><a href="#quotes">What people say</a></li>
-                <li><a href="#files">Build your own</a></li>
               </ul>
             </li>
             <li class="dd">
@@ -51,8 +51,6 @@
                 <li><a href="#team">Meet Hunt Robotics</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#zagreb">Zagreb and STEMpura</a></li>
-                <li><a href="stories.html">Contributor stories</a></li>
-                <li><a href="licence.html">Licences</a></li>
               </ul>
             </li>
           </ul>
@@ -76,7 +74,7 @@
           <p class="lede">An affordable, portable Braille printer for short-run prints, from children’s books, poems and worksheets to menus and board agendas. It’s open source, so anyone can make one.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#files">Get the files and build guide</a>
-            <a class="btn btn-ghost" href="#try">Try Braille yourself</a>
+            <a class="btn btn-ghost" href="#build">See the build</a>
           </div>
         </div>
 
@@ -96,7 +94,7 @@
           <div class="award">
             <div class="award-text">
               <p>British brothers Tom Hunt, 19, and Felix Hunt, 16, competing as Hunt Robotics for the UK, <a href="#zagreb">won the Start-Up Idea award</a> at the 2026 World Robot Olympiad (WRO) European Open Championship, held in Zagreb, Croatia from 13–16 October.</p>
-              <p>The brothers also took second place in both the European and global podiums in the Senior Future Innovators category.</p>
+              <p>The brothers also took <a href="#zagreb">second place in both the European and global podiums</a> in the Senior Future Innovators category.</p>
             </div>
           </div>
         </div>
@@ -119,91 +117,6 @@
       </div>
     </section>
 
-
-    <!-- Problem / solution -->
-    <section class="section" id="about">
-      <div class="wrap">
-        <p class="big-stat"><span>2.2 billion</span> people live with a near or distance vision impairment, according to the World Health Organization.</p>
-        <div class="ps-grid">
-          <article class="ps-card ps-problem">
-            <span class="ps-tag">The problem</span>
-            <h2>Braille is still too expensive to print</h2>
-            <p>Braille books, worksheets and everyday printed material are hard to find or too costly to make. Even the cheapest automated embossers cost £1,500 or more, out of reach for individuals, small schools and libraries.</p>
-          </article>
-          <article class="ps-card ps-solution">
-            <span class="ps-tag">Our answer</span>
-            <h2>So we built one that isn’t</h2>
-            <p>BrailleGo! is an open-source Braille printer. Type on a phone or laptop and it prints your text onto A4 paper. The designs and code are free for anyone to use, and common parts and a 3D-printed frame make it cheap to build and easy to repair. It’s made for short runs rather than whole books.</p>
-          </article>
-        </div>
-        <aside class="origin">
-          <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
-          <div class="origin-text">
-            <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Our Braille print-outs were tested and validated by the former chair of the RNIB. Braille users helped shape and test BrailleGo! at every stage. If you like or use BrailleGo!, please consider making a donation!</p>
-            <a class="btn btn-primary btn-small" href="https://www.rnib.org.uk/" rel="noopener">Make a donation</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- How to use it -->
-    <section class="section section-tint" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>How to use it</h2>
-          <p>No app and no software to install. If you can send a text message, you can print Braille.</p>
-        </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></svg></span>
-            <h3>Plug it in</h3>
-            <p>Connect the power lead and flick the switch.</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5"/></svg></span>
-            <h3>Load paper</h3>
-            <p>Slide a sheet of A4 paper into the rollers.</p>
-          </li>
-          <li class="step s-plain">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></svg></span>
-            <h3>Connect</h3>
-            <p>Join the BrailleGo! Wi-Fi from any phone, tablet or laptop.</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span>
-            <h3>Type and print</h3>
-            <p>Type your text on the BrailleGo! page and press print.</p>
-          </li>
-          <li class="step">
-            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8a8 8 0 0 0 16 0v-3a2 2 0 0 0-4 0"/></svg></span>
-            <h3>Read it</h3>
-            <p>Your page comes out with raised dots, ready to read by touch.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Try it -->
-    <section class="section try" id="try">
-      <div class="wrap try-grid">
-        <div class="try-head">
-          <h2>See your words in Braille</h2>
-          <p>Type something and watch it turn into the dot patterns BrailleGo! prints.</p>
-        </div>
-        <div class="try-panel">
-          <label class="try-label" for="try-input">Your text</label>
-          <input id="try-input" class="try-input" type="text" maxlength="40" value="In the beginning" autocomplete="off" spellcheck="false">
-          <div class="try-sheet">
-            <div class="try-cells" id="try-cells" role="img" aria-label="Braille dot patterns for your text"></div>
-          </div>
-          <dl class="try-stats" aria-live="polite">
-            <div><dt>Braille cells</dt><dd id="stat-cells">0</dd></div>
-            <div><dt>Columns to emboss</dt><dd id="stat-cols">0</dd></div>
-            <div><dt>Dots pressed</dt><dd id="stat-dots">0</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
 
     <!-- Build carousel -->
     <section class="section build" id="build">
@@ -228,6 +141,54 @@
           <figure><img src="assets/img/build/13-power.jpg" width="525" height="700" alt="Power switch and 12V plug"><figcaption>Power switch</figcaption></figure>
           <figure class="dark-bg wide"><img src="assets/img/build/14-pcb.jpg" width="746" height="377" alt="Custom circuit board design"><figcaption>Circuit board</figcaption></figure>
         </div>
+      </div>
+    </section>
+
+    <!-- Open source / files -->
+    <section class="section files-section" id="files">
+      <div class="wrap">
+        <div class="files-panel">
+          <div class="files-text">
+            <h2>Build your own</h2>
+            <p>BrailleGo! is open source hardware. Everything you need to make one is in our GitHub repository, and you’re free to build it, change it and even sell it.</p>
+            <div class="files-actions">
+              <a class="btn btn-dark btn-large" href="https://github.com/huntfelix/BrailleGoFiles">GitHub Files</a>
+              <a class="btn btn-primary btn-large" href="stories.html">Contributor Stories</a>
+            </div>
+            <ul class="lic-chips" aria-label="Licences">
+              <li><a href="licence.html#hardware"><small>Hardware</small><b>CERN-OHL-S-2.0</b></a></li>
+              <li><a href="licence.html#software"><small>Firmware</small><b>GPL-3.0-or-later</b></a></li>
+              <li><a href="licence.html#docs"><small>Guides</small><b>CC BY-SA 4.0</b></a></li>
+            </ul>
+            <p class="lic-summary">If you share or sell your version, credit us and publish your changes. <a href="licence.html">How the licences work</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem / solution -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <p class="big-stat"><span>2.2 billion</span> people live with a near or distance vision impairment, according to the World Health Organization.</p>
+        <div class="ps-grid">
+          <article class="ps-card ps-problem">
+            <span class="ps-tag">The problem</span>
+            <h2>Braille is still too expensive to print</h2>
+            <p>Braille books, worksheets and everyday printed material are hard to find or too costly to make. Even the cheapest automated embossers cost £1,500 or more, out of reach for individuals, small schools and libraries.</p>
+          </article>
+          <article class="ps-card ps-solution">
+            <span class="ps-tag">Our answer</span>
+            <h2>So we built one that isn’t</h2>
+            <p>BrailleGo! is an open-source Braille printer. Type on a phone or laptop and it prints your text onto A4 paper. The designs and code are free for anyone to use, and common parts and a 3D-printed frame make it cheap to build and easy to repair. It’s made for short runs rather than whole books.</p>
+          </article>
+        </div>
+        <aside class="origin">
+          <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
+          <div class="origin-text">
+            <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Our Braille print-outs were tested and validated by the former chair of the RNIB. Braille users helped shape and test BrailleGo! at every stage. If you like or use BrailleGo!, please consider making a donation!</p>
+            <a class="btn btn-primary btn-small" href="https://www.rnib.org.uk/" rel="noopener">Make a donation</a>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -292,41 +253,6 @@
       </div>
     </section>
 
-    <!-- Open source / files -->
-    <section class="section files-section" id="files">
-      <div class="wrap">
-        <div class="files-panel">
-          <div class="files-text">
-            <h2>Build your own</h2>
-            <p>BrailleGo! is open source hardware. Everything you need to make one is in our GitHub repository, and you’re free to build it, change it and even sell it.</p>
-            <a class="btn btn-dark btn-large" href="https://github.com/huntfelix/BrailleGoFiles">Open BrailleGoFiles on GitHub</a>
-            <ul class="lic-chips" aria-label="Licences">
-              <li><a href="licence.html#hardware"><small>Hardware</small><b>CERN-OHL-S-2.0</b></a></li>
-              <li><a href="licence.html#software"><small>Firmware</small><b>GPL-3.0-or-later</b></a></li>
-              <li><a href="licence.html#docs"><small>Guides</small><b>CC BY-SA 4.0</b></a></li>
-            </ul>
-            <p class="lic-summary">If you share or sell your version, credit us and publish your changes. <a href="licence.html">How the licences work</a></p>
-          </div>
-          <a class="repo-card" href="https://github.com/huntfelix/BrailleGoFiles" aria-label="BrailleGoFiles repository on GitHub">
-            <span class="repo-name">
-              <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.71 1.71.75.75 0 1 1-1.06 1.06A2.49 2.49 0 0 1 2 11.5v-9Zm10.5-1h-8a1 1 0 0 0-1 1v6.71A2.49 2.49 0 0 1 4.5 9h8V1.5Z"/></svg>
-              huntfelix / <b>BrailleGoFiles</b>
-            </span>
-            <ul class="repo-list">
-              <li class="r-red">3D-print and CAD files</li>
-              <li>ESP32 firmware</li>
-              <li >Circuit board design</li>
-              <li class="r-red">Parts list</li>
-              <li>Step-by-step build guide</li>
-            </ul>
-          </a>
-          <div class="files-stories">
-            <a class="btn btn-primary btn-large" href="stories.html">Contributor Stories</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Team -->
     <section class="section section-tint" id="team">
       <div class="wrap team-grid">
@@ -339,26 +265,21 @@
           <p class="team-lede">We’re Tom and Felix Hunt, two brothers who love engineering and robotics. We built BrailleGo! for the World Robot Olympiad 2026, where the theme is Robots Meet Culture.</p>
           <div class="people" id="contact">
             <div class="person">
-              <h3>Tom Hunt <span>19</span></h3>
+              <h3>Tom Hunt</h3>
               <p>Mechanical design: the frame, print head and every custom part.</p>
               <ul class="contact-links" aria-label="Contact Tom">
-                <li><a href="mailto:thomsubhunt@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>thomsubhunt@gmail.com</a></li>
+                <li><a href="mailto:thomsebhunt@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>thomsebhunt@gmail.com</a></li>
                 <li><a href="https://www.linkedin.com/in/tom-hunt-54a1a3300/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.83v1.54h.06c.53-.95 1.84-1.96 3.79-1.96 4.05 0 4.82 2.55 4.82 5.87V21h-4v-5.13c0-1.22-.02-2.8-1.75-2.8-1.75 0-2.02 1.33-2.02 2.71V21h-4z"/></svg>Tom on LinkedIn</a></li>
               </ul>
             </div>
             <div class="person">
-              <h3>Felix Hunt <span>16</span></h3>
+              <h3>Felix Hunt</h3>
               <p>Electronics and code: wiring, power, the circuit board and firmware.</p>
               <ul class="contact-links" aria-label="Contact Felix">
                 <li><a href="mailto:huntfelix41@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>huntfelix41@gmail.com</a></li>
                 <li><a href="https://www.linkedin.com/in/felix-hunt-b60a7a413/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.83v1.54h.06c.53-.95 1.84-1.96 3.79-1.96 4.05 0 4.82 2.55 4.82 5.87V21h-4v-5.13c0-1.22-.02-2.8-1.75-2.8-1.75 0-2.02 1.33-2.02 2.71V21h-4z"/></svg>Felix on LinkedIn</a></li>
               </ul>
             </div>
-          </div>
-          <p class="contact-note">Questions, a school or charity that would like a BrailleGo!, or want to help? Email either of us.</p>
-          <div class="next">
-            <h3>What’s next</h3>
-            <p>Faster printing, a punch mechanism that meets the full Braille specification, and a proper enclosure to protect the electronics.</p>
           </div>
         </div>
       </div>
@@ -403,8 +324,7 @@
       </div>
       <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
       <nav aria-label="Footer">
-        <a href="#how">How to use it</a>
-        <a href="#try">Try it</a>
+        <a href="#build">The build</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
         <a href="stories.html">Stories</a>
@@ -415,6 +335,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>
