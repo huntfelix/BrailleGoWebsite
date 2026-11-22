@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -61,7 +61,6 @@
 
     <section class="page-head">
       <div class="wrap">
-        <p class="crumb"><a href="index.html">BrailleGo!</a> <span aria-hidden="true">/</span> Contributor stories</p>
         <h1>Contributor stories</h1>
         <p class="lede">Builds, modifications and real-world deployments from people making and using BrailleGo!.</p>
       </div>
@@ -73,21 +72,15 @@
         <div class="submit-panel">
           <div class="submit-text">
             <h2 id="submit-h">Submit a build report</h2>
-            <p>Built a BrailleGo!, forked the design or deployed one in a school, library or charity? Send us a build report. We’ll review it and publish the best ones here, with credit to you.</p>
-            <a class="btn btn-primary btn-large" id="submit-btn"
-               href="mailto:thomsebhunt@gmail.com,huntfelix41@gmail.com?subject=BrailleGo!%20build%20report&amp;body=Name%20or%20handle%3A%0D%0ACountry%3A%0D%0A%0D%0AHardware%20revision%20or%20fork%3A%0D%0AMechanical%20changes%20(CAD%2C%20print%20settings%2C%20materials)%3A%0D%0AElectrical%20changes%20(PCB%2C%20drivers%2C%20power%20supply)%3A%0D%0AFirmware%20version%20or%20commit%20hash%3A%0D%0ACalibration%20settings%20(step%20distances%2C%20servo%20angles)%3A%0D%0A%0D%0APrint%20results%20(paper%20weight%2C%20dot%20height%2C%20cells%20per%20line%2C%20speed)%3A%0D%0AIssues%20and%20fixes%3A%0D%0AUse%20case%20(who%20uses%20it%20and%20what%20you%20print)%3A%0D%0A%0D%0ALinks%20(repository%2C%20CAD%2C%20video)%3A%0D%0A%0D%0APhotos%3A%20please%20attach%20photos%20of%20the%20build%20and%20an%20embossed%20page.%0D%0A%0D%0AI%20agree%20to%20this%20report%20and%20my%20photos%20being%20published%20on%20the%20BrailleGo!%20website%20with%20credit%3A%20yes%20%2F%20no%0D%0A">Submit a build report</a>
-            <p class="submit-note">Opens an email to Tom and Felix with a report template filled in. Attach your photos before sending.</p>
+            <p>Built or modified a BrailleGo!? Send us a build report and we’ll publish the best ones here, with credit to you.</p>
+            <a class="btn btn-primary btn-large" id="submit-btn" href="index.html#contact">Submit a build report</a>
           </div>
           <div class="submit-checklist">
             <h3>What to include</h3>
             <ul class="ticks">
-              <li>Hardware revision, or a link to your fork</li>
-              <li>Changes to the CAD, PCB or bill of materials</li>
-              <li>Firmware version or commit hash</li>
-              <li>Calibration settings and print parameters</li>
-              <li>Embossing results: paper weight, dot height, speed</li>
-              <li>Faults you hit and how you fixed them</li>
-              <li>Photos of the build and an embossed page</li>
+              <li>Link to your GitHub fork</li>
+              <li>List of changes</li>
+              <li>Photos of your build</li>
             </ul>
           </div>
         </div>
@@ -105,7 +98,7 @@
         <div class="story-empty" id="story-empty" hidden>
           <h3>No stories yet</h3>
           <p>BrailleGo! has only just been released, so there’s nothing here yet. If you build one, yours could be the first story we publish.</p>
-          <a class="btn btn-outline" href="#submit-h">Submit a build report</a>
+          <a class="btn btn-outline" href="index.html#contact">Submit a build report</a>
         </div>
         <noscript><p>Turn on JavaScript to see contributor stories.</p></noscript>
       </div>
@@ -133,6 +126,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=21"></script>
+  <script src="script.js?v=22"></script>
 </body>
 </html>

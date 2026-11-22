@@ -67,7 +67,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 
 /* ---------- Nav ---------- */
 .nav {
-  position: sticky; top: 0; z-index: 50;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
   background: rgba(255,255,255,.94);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -706,7 +706,7 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .safety { margin: 0; padding-left: 1.2rem; }
 .safety li { margin-bottom: .6rem; }
 
-.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem 2rem; }
+.more-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 2.5rem; }
 .more-grid p { color: var(--muted); }
 .more-grid code { font-size: .92em; background: var(--grey-50); padding: .05rem .3rem; border-radius: 4px; }
 @media (max-width: 900px) { .more-grid { grid-template-columns: 1fr; } }
@@ -781,3 +781,15 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 .award-text a { white-space: normal; }
 #build { padding-bottom: 0; }
 #files { padding-top: clamp(1.25rem, 2.5vw, 2rem); }
+
+/* The header is fixed, so the page starts below it. Its shrinking no longer moves the page. */
+:root { --nav-h: 116px; }
+@media (max-width: 420px) { :root { --nav-h: 88px; } }
+body { padding-top: var(--nav-h); }
+html { overflow-anchor: none; }
+
+/* Build report: short version */
+.submit-panel .ticks { margin-bottom: 0; }
+.rnib-section .origin { margin-top: 0; }
+.btn-soon { cursor: default; opacity: .85; }
+.btn-soon:hover { background: #fff; color: var(--purple); }

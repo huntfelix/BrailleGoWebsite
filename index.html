@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -152,7 +152,7 @@
             <h2>Build your own</h2>
             <p>BrailleGo! is open source hardware. Everything you need to make one is in our GitHub repository, and you’re free to build it, change it and even sell it.</p>
             <div class="files-actions">
-              <a class="btn btn-dark btn-large" href="https://github.com/huntfelix/BrailleGoFiles">GitHub Files</a>
+              <span class="btn btn-dark btn-large btn-soon" role="button" aria-disabled="true" title="The GitHub files are coming soon">Coming soon…</span>
               <a class="btn btn-primary btn-large" href="stories.html">Contributor Stories</a>
             </div>
             <ul class="lic-chips" aria-label="Licences">
@@ -182,13 +182,6 @@
             <p>BrailleGo! is an open-source Braille printer. Type on a phone or laptop and it prints your text onto A4 paper. The designs and code are free for anyone to use, and common parts and a 3D-printed frame make it cheap to build and easy to repair. It’s made for short runs rather than whole books.</p>
           </article>
         </div>
-        <aside class="origin">
-          <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
-          <div class="origin-text">
-            <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Our Braille print-outs were tested and validated by the former chair of the RNIB. Braille users helped shape and test BrailleGo! at every stage. If you like or use BrailleGo!, please consider making a donation!</p>
-            <a class="btn btn-primary btn-small" href="https://www.rnib.org.uk/" rel="noopener">Make a donation</a>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -301,6 +294,19 @@
       </div>
     </section>
 
+    <!-- RNIB -->
+    <section class="section section-tint rnib-section" id="rnib" aria-label="RNIB">
+      <div class="wrap">
+        <aside class="origin">
+          <img src="assets/logos/rnib.png" alt="RNIB" data-fallback="RNIB">
+          <div class="origin-text">
+            <p>Our grandfather was blind, and we have relatives who volunteer with the Royal National Institute of Blind People. Our Braille print-outs were tested and validated by the former chair of the RNIB. Braille users helped shape and test BrailleGo! at every stage. If you like or use BrailleGo!, please consider making a donation!</p>
+            <a class="btn btn-primary btn-small" href="https://www.rnib.org.uk/" rel="noopener">Make a donation</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
     <!-- Logos -->
     <section class="supporters" aria-labelledby="sup-h">
       <div class="wrap">
@@ -335,6 +341,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=21"></script>
+  <script src="script.js?v=22"></script>
 </body>
 </html>

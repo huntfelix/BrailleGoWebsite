@@ -62,14 +62,7 @@ function makeCell(ch, delayFor) {
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduced) return;
 
-  var SHOW_BRAILLE = 3800, SHOW_TEXT = 2800;
-  var asText = false;
-  function flip() {
-    asText = !asText;
-    el.classList.toggle('as-text', asText);
-    setTimeout(flip, asText ? SHOW_TEXT : SHOW_BRAILLE);
-  }
-  setTimeout(flip, SHOW_BRAILLE);
+  // The strip embosses once and stays as Braille.
 })();
 
 // Build reel: duplicate the photos so the scroll loops seamlessly.
@@ -169,7 +162,12 @@ function makeCell(ch, delayFor) {
 (function () {
   var nav = document.getElementById('nav');
   if (!nav) return;
-  function update() { nav.classList.toggle('scrolled', window.scrollY > 40); }
+  // Shrink after 80px, grow back only near the top, so it can't flicker in between
+  function update() {
+    var y = window.scrollY;
+    if (y > 80) nav.classList.add('scrolled');
+    else if (y < 20) nav.classList.remove('scrolled');
+  }
   update();
   window.addEventListener('scroll', update, { passive: true });
 })();
