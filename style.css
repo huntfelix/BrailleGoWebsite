@@ -25,8 +25,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-padding-top: 5.5rem; }
 
 body {
   margin: 0;
@@ -614,17 +613,21 @@ p { margin: 0 0 1rem; max-width: 64ch; }
 /* ---------- Footer ---------- */
 .footer { background: var(--black); color: #A9A9B0; font-size: .98rem; }
 .footer-dots { height: 4px; background: var(--red); }
-.footer-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem 3rem; padding-top: 2rem; padding-bottom: 2rem; }
-.footer-brand { display: flex; flex-direction: column; }
+.footer-inner { display: grid; grid-template-columns: minmax(12rem, 1fr) 3fr; gap: 2rem 3rem; padding-top: 2.25rem; padding-bottom: 2rem; }
+.footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
 .footer-brand strong { display: block; color: #fff; font-size: 1.1rem; }
 .footer-brand span { font-size: .92rem; }
 .footer-logo { width: 40px; height: auto; margin-top: .7rem; background: #fff; border-radius: 8px; padding: 4px; box-sizing: content-box; }
-.footer-braille { margin: 0; font-size: 1.4rem; letter-spacing: .12em; color: rgba(255,255,255,.25); justify-self: center; }
-.footer nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.footer-braille { margin: 1rem 0 0; font-size: 1.1rem; letter-spacing: .1em; color: rgba(255,255,255,.25); }
+.footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem 2rem; }
+.footer-group h2 { font-size: .9rem; font-weight: 700; color: var(--red); letter-spacing: 0; margin: 0 0 .6rem; }
+.footer-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
 .footer a { color: #fff; text-decoration: none; }
-.footer a:hover { color: var(--red); }
+.footer a:hover, .footer a[aria-current="page"] { color: var(--red); }
 .copy { grid-column: 1 / -1; max-width: none; margin: 0; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.12); font-size: .9rem; }
-@media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr; } .footer-braille { justify-self: start; } }
+.copy a { text-decoration: underline; }
+@media (max-width: 860px) { .footer-inner { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .footer-nav { grid-template-columns: 1fr 1fr; } }
 
 /* ---------- Licence chips (home page files panel) ---------- */
 .lic-chips { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }

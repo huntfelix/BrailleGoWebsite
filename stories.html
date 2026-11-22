@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -47,7 +47,7 @@
               <ul class="dd-list" id="dd-team">
                 <li><a href="index.html#team">Meet Hunt Robotics</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="index.html#zagreb">Zagreb and STEMpura</a></li>
+                <li><a href="index.html#zagreb">Partners</a></li>
               </ul>
             </li>
           </ul>
@@ -73,7 +73,7 @@
           <div class="submit-text">
             <h2 id="submit-h">Submit a build report</h2>
             <p>Built or modified a BrailleGo!? Send us a build report and we’ll publish the best ones here, with credit to you.</p>
-            <a class="btn btn-primary btn-large" id="submit-btn" href="index.html#contact">Submit a build report</a>
+            <a class="btn btn-primary btn-large" id="submit-btn" href="index.html#team">Submit a build report</a>
           </div>
           <div class="submit-checklist">
             <h3>What to include</h3>
@@ -98,7 +98,7 @@
         <div class="story-empty" id="story-empty" hidden>
           <h3>No stories yet</h3>
           <p>BrailleGo! has only just been released, so there’s nothing here yet. If you build one, yours could be the first story we publish.</p>
-          <a class="btn btn-outline" href="index.html#contact">Submit a build report</a>
+          <a class="btn btn-outline" href="index.html#team">Submit a build report</a>
         </div>
         <noscript><p>Turn on JavaScript to see contributor stories.</p></noscript>
       </div>
@@ -112,20 +112,39 @@
         <strong>BrailleGo!</strong>
         <span>by Hunt Robotics</span>
         <img class="footer-logo" src="assets/logos/hunt-chip.png" alt="Hunt Robotics logo" width="40" height="39">
+        <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
       </div>
-      <p class="footer-braille" aria-hidden="true">⠠⠁⠉⠉⠑⠎⠎⠊⠃⠇⠑ ⠉⠥⠇⠞⠥⠗⠑</p>
-      <nav aria-label="Footer">
-        <a href="index.html#build">The build</a>
-        <a href="index.html#team">Team</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="stories.html" aria-current="page">Stories</a>
-        <a href="licence.html">Licences</a>
-        <a href="https://github.com/huntfelix/BrailleGoFiles">Files on GitHub</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-group">
+          <h2>The printer</h2>
+          <ul>
+            <li><a href="index.html#build">The build</a></li>
+            <li><a href="index.html#files">Build your own</a></li>
+            <li><a href="stories.html" aria-current="page">Contributor stories</a></li>
+            <li><a href="licence.html">Licences</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h2>About</h2>
+          <ul>
+            <li><a href="index.html#about">The problem and our answer</a></li>
+            <li><a href="index.html#impact">Price comparison</a></li>
+            <li><a href="index.html#quotes">What people say</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h2>Team</h2>
+          <ul>
+            <li><a href="index.html#team">Meet Hunt Robotics</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#zagreb">Partners</a></li>
+          </ul>
+        </div>
       </nav>
       <p class="copy">© <span id="year">2026</span> Hunt Robotics. Open source hardware: <a href="licence.html#hardware">CERN-OHL-S-2.0</a> · <a href="licence.html#software">GPL-3.0-or-later</a> · <a href="licence.html#docs">CC BY-SA 4.0</a></p>
     </div>
   </footer>
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=23"></script>
 </body>
 </html>

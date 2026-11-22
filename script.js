@@ -19,52 +19,6 @@ function makeCell(ch, delayFor) {
   return cell;
 }
 
-// Hero strip: emboss "BrailleGo!" in Braille, then turn each cell into its letter
-// in the same spot, and back again – on a loop.
-// data-text has one character per Braille cell; a space means the cell has no
-// letter of its own (the capital signs), so it just fades out.
-(function () {
-  var el = document.getElementById('emboss');
-  if (!el) return;
-  var cells = Array.from(el.dataset.braille || '');
-  var letters = Array.from(el.dataset.text || '');
-  var STEP = 55;
-
-  cells.forEach(function (ch, i) {
-    var slot = document.createElement('span');
-    slot.className = 'slot';
-    slot.style.setProperty('--i', i);
-    var start = i * 2;
-    // left column (dots 1-3) first, then the right (4-6) – like the printer
-    slot.appendChild(makeCell(ch, function (n) { return 100 + (start + (n > 3 ? 1 : 0)) * STEP; }));
-    var letter = document.createElement('span');
-    letter.className = 'letter';
-    letter.textContent = (letters[i] || '').trim();
-    if (!letter.textContent) slot.classList.add('blank');
-    slot.appendChild(letter);
-    el.appendChild(slot);
-  });
-
-  // In text mode each slot narrows to its own letter, so the word closes up
-  // into "BrailleGo!". Measure the letters, and lock the strip to the Braille width.
-  function measure() {
-    el.style.width = '';
-    el.querySelectorAll('.slot').forEach(function (slot) {
-      var l = slot.querySelector('.letter');
-      slot.style.setProperty('--lw', l.textContent ? l.offsetWidth + 'px' : '0px');
-    });
-    if (!el.classList.contains('as-text')) el.style.width = el.offsetWidth + 'px';
-  }
-  measure();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-  window.addEventListener('resize', measure);
-
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduced) return;
-
-  // The strip embosses once and stays as Braille.
-})();
-
 // Build reel: duplicate the photos so the scroll loops seamlessly.
 (function () {
   var track = document.querySelector('.reel-track');
@@ -215,6 +169,42 @@ function makeCell(ch, delayFor) {
     closeAll(); 
     if (nav.classList.contains('menu-open')) { setMenu(false); toggle.focus(); }
     else if (openBtn) openBtn.focus();
+  });
+})();
+
+// Jumping to a section on the same page: a quicker smooth scroll than the browser's own
+(function () {
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function offset() { return parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0; }
+  function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function scrollToEl(el) {
+    var start = window.scrollY;
+    var end = Math.max(0, Math.min(el.getBoundingClientRect().top + start - offset(),
+                                   document.documentElement.scrollHeight - window.innerHeight));
+    var dist = end - start;
+    if (reduced || Math.abs(dist) < 2) { window.scrollTo(0, end); return; }
+    var dur = Math.min(450, Math.max(200, Math.abs(dist) / 10));
+    var t0 = null;
+    function step(now) {
+      if (t0 === null) t0 = now;
+      var p = Math.min(1, (now - t0) / dur);
+      window.scrollTo(0, start + dist * ease(p));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href*="#"]');
+    if (!a || a.origin !== location.origin || a.pathname !== location.pathname) return;
+    var id = decodeURIComponent(a.hash.slice(1));
+    var el = id ? document.getElementById(id) : null;
+    if (!el) return;
+    e.preventDefault();
+    history.pushState(null, '', a.hash);
+    scrollToEl(el);
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
   });
 })();
 
